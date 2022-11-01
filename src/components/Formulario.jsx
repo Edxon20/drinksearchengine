@@ -15,15 +15,13 @@ const Formulario = () =>{
     });
 
     const { categorias } = useContext(CategoriasContext);
-    const { buscarRecetas } = useContext(RecetasContext);
+    const { buscarRecetas,guardarConsultar } = useContext(RecetasContext);
 
     //Funcion para leer los contenidos 
     const obtenerDatosReceta = e =>{
         guardarBusqueda({
             ...busqueda,
             [e.target.name] : e.target.value
-
-
         })
     }
     return(       
@@ -34,7 +32,8 @@ const Formulario = () =>{
                 //Esto de e lo hacemos aca mismo o podemos crear una funcion adicional.
                 e=>{
                     e.preventDefault();
-                    buscarRecetas(busqueda);                    
+                    buscarRecetas(busqueda);  
+                    guardarConsultar(true);                  
                 }
             }
         >

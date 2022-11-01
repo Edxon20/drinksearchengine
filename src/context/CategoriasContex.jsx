@@ -24,7 +24,7 @@ const CategoriasProvider = (props) => {
         }
         obtenerCategorias();
     }, []);
-
+    //Lo del return es lo que va a fluir
     return (
         <CategoriasContext.Provider
             value={{
